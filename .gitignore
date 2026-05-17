@@ -1,0 +1,33 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Model training logs
+lightning_logs/
+xgb_regeneration.log
+*.bak_*
+
+# Raw data (WFP copyright - download from source)
+data/raw/
+
+# Claude personal memory and instructions
+.claude/
+CLAUDE.md
+
+# Temp files
+~$*
+
+# LaTeX build artifacts
+Report&Paper/*.aux
+Report&Paper/*.log
+Report&Paper/*.bbl
+Report&Paper/*.blg
+Report&Paper/*.out
+Report&Paper/*.toc
+Report&Paper/*.lof
+Report&Paper/*.lot
+Report&Paper/*.synctex.gz
+Report&Paper/*.fls
+Report&Paper/*.fdb_latexmk

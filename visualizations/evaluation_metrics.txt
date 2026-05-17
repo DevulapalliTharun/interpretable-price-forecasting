@@ -1,0 +1,30 @@
+============================================================
+EVALUATION METRICS -- Test Period: Jan 2023 - Jul 2023
+============================================================
+
+XGBoost Baseline:
+  MAE:  1.95 Rs/KG
+  RMSE: 6.84 Rs/KG
+  MAPE: 3.5%
+  Onions     MAE=0.61  MAPE=2.6%
+  Tomatoes   MAE=4.19  MAPE=5.9%
+  Rice       MAE=0.61  MAPE=1.4%
+
+TFT (Temporal Fusion Transformer):
+  MAE:  5.27 Rs/KG
+  RMSE: 12.59 Rs/KG
+  MAPE: 11.4%
+  Empirical q0.1-q0.9 Coverage: 84.0%
+  Avg Band Width: 11.99 Rs/KG
+  Onions     MAE=2.25  MAPE=9.1%  Coverage=91%
+  Tomatoes   MAE=8.13  MAPE=13.0%  Coverage=82%
+  Rice       MAE=4.81  MAPE=11.7%  Coverage=79%
+
+------------------------------------------------------------
+COMPARISON SUMMARY:
+  XGBoost: Better point accuracy (lower MAE/MAPE)
+           Point-only baseline trained through Dec 2022.
+  TFT:     Probabilistic multi-horizon model
+           - Attention: which past months drove predictions
+           - Variable importance: which features matter per crop
+           - Coverage 84%: prices stay in band

@@ -1,0 +1,22 @@
+{
+  "hidden_size": 32,
+  "attention_head_size": 2,
+  "lstm_layers": 1,
+  "hidden_continuous_size": 16,
+  "dropout": 0.2,
+  "quantiles": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "learning_rate": 0.03,
+  "max_encoder_length": 24,
+  "max_prediction_length": 6,
+  "train_cutoff": "2021-12-31",
+  "val_window": "2022",
+  "xgb_train_cutoff": "2019-12-31",
+  "fused_feature": "xgb_log_pred",
+  "train_rows": 14686,
+  "val_rows": 1461,
+  "test_rows": 792
+}

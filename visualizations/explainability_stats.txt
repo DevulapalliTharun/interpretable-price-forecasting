@@ -1,0 +1,51 @@
+========================================================================
+EXPLAINABILITY & NOVELTY - STATISTICAL VALIDATION
+========================================================================
+
+[A] VSN STABILITY via series-level bootstrap (N=1000 resamples)
+------------------------------------------------------------------------
+  Mean pairwise Kendall tau across bootstrap rankings: 0.942 (95% CI [0.895, 0.990])
+  Interpretation: tau close to 1 -> feature rankings are stable
+
+  Top-10 encoder features (mean +/- 95% CI):
+  feature                      mean   95% CI
+  temperature_mean           0.1432   [0.1359, 0.1514]
+  rain_excess                0.1427   [0.1343, 0.1518]
+  rain_deficit               0.1402   [0.1290, 0.1512]
+  humidity_mean              0.0664   [0.0636, 0.0693]
+  year                       0.0600   [0.0575, 0.0628]
+  covid_lockdown             0.0587   [0.0566, 0.0607]
+  season                     0.0419   [0.0380, 0.0461]
+  log_price                  0.0405   [0.0362, 0.0450]
+  rolling_6m                 0.0382   [0.0360, 0.0407]
+  price_lag_12m              0.0381   [0.0366, 0.0397]
+  Saved: visualizations/fig_vsn_stability.png
+
+[B] ABLATION: paired t-test across checkpoint families (test split)
+------------------------------------------------------------------------
+  Paired rows across all three families: n = 792
+  step5              vs original            mean dMAE=-5.577 Rs/kg  t=-22.34 p=4.602e-86  Wilcoxon p=1.245e-95  Cohen's d=-0.79
+  step5              vs step1               mean dMAE=-4.641 Rs/kg  t=-21.47 p=5.993e-81  Wilcoxon p=2.303e-82  Cohen's d=-0.76
+  step1              vs original            mean dMAE=-0.936 Rs/kg  t=-4.15 p=3.644e-05  Wilcoxon p=2.732e-06  Cohen's d=-0.15
+
+  Per-commodity MAE by family:
+  commodity    original      step1      step5
+  Onions          4.155      8.173      2.251
+  Rice           12.005      6.168      4.807
+  Tomatoes       15.317     14.518      8.127
+  Saved: visualizations/fig_ablation_mae.png
+
+[C] CQR CALIBRATION: per-commodity binomial test on step5 (nominal 80%)
+------------------------------------------------------------------------
+  commodity      n     hits   coverage  p (binom)
+  Onions       242      220     90.9%      0.000  <-- reject H0=nominal
+  Rice         253      200     79.1%      0.695
+  Tomatoes     297      245     82.5%      0.310
+  ALL          792      665     84.0%      0.005
+  H0: empirical coverage == 80% nominal. p > 0.05 -> cannot reject H0
+       (i.e., the CQR band is statistically calibrated for that commodity).
+  Saved: visualizations/fig_calibration_coverage.png
+
+========================================================================
+Done. See visualizations/ for 3 figures + explainability_stats.txt
+========================================================================

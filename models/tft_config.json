@@ -1,0 +1,19 @@
+{
+  "hidden_size": 32,
+  "attention_head_size": 2,
+  "lstm_layers": 1,
+  "hidden_continuous_size": 16,
+  "dropout": 0.2,
+  "quantiles": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "learning_rate": 0.03,
+  "max_encoder_length": 24,
+  "max_prediction_length": 6,
+  "parameters": 120542,
+  "train_rows": 13227,
+  "val_rows": 2920,
+  "test_rows": 792
+}
