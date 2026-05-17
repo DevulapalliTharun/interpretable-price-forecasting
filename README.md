@@ -1,8 +1,16 @@
-# Kalakar 2 — Indian Food Price Forecasting with Uncertainty and Explainability
+# Indian Food Price Forecasting with Uncertainty and Explainability
 
 A complete end-to-end forecasting system for Indian food prices: XGBoost point baseline + Temporal Fusion Transformer (TFT) probabilistic forecasting + Conformal Quantile Regression (CQR) calibration + interpretable explanations + Streamlit dashboard.
 
 **Best model: TFT-XGBFusion-CQR** — MAE 5.27 Rs/KG · MAPE 11.4% · Coverage 84.0% on 2023 test data.
+
+---
+
+## Live Demo
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://interpretable-price-forecasting.streamlit.app)
+
+> The live app runs with pre-computed predictions and XGBoost inference. TFT live inference requires the full environment with PyTorch.
 
 ---
 
@@ -1303,8 +1311,8 @@ In priority order:
 | `gpu_utils.py` | GPU/CPU detection, trainer kwargs for TFT prediction |
 | `run_xgb_steps.py` | Convenience runner for the full step5 XGB-fused pipeline |
 | `check_xgb_status.py` | Status checker for the step5 pipeline run |
-| `requirements.txt` | Python package dependencies |
-| `CLAUDE.md` | Project memory for Claude Code assistant |
+| `requirements.txt` | Full Python dependencies (includes PyTorch for training) |
+| `requirements_streamlit.txt` | Lightweight dependencies for Streamlit Cloud deployment |
 | `README.md` | This file |
 
 ### `data/raw/`

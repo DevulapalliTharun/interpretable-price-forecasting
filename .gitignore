@@ -12,6 +12,13 @@ xgb_regeneration.log
 # Raw data (WFP copyright - download from source)
 data/raw/
 
+# Senior reference files (not our work)
+Report&Paper/paper.pdf
+Report&Paper/paper_extracted.txt
+Report&Paper/report.pdf
+Report&Paper/report_extracted.txt
+Report&Paper/sample_report_format/
+
 # Claude personal memory and instructions
 .claude/
 CLAUDE.md
