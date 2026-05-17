@@ -8,7 +8,7 @@ A complete end-to-end forecasting system for Indian food prices: XGBoost point b
 
 ## Live Demo
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://interpretable-price-forecasting.streamlit.app)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://interpretable-price-forecasting-jxkxjw86wejdiehu3tdcwr.streamlit.app/)
 
 > The live app runs with pre-computed predictions and XGBoost inference. TFT live inference requires the full environment with PyTorch.
 
